@@ -92,7 +92,7 @@ class Chef
 
           else
             @candidate_version ||= package_name_array.each_with_index.map { |pkg, i| available_version(i) }
-           end
+          end
         end
 
         def uri_scheme?(str)
@@ -161,7 +161,6 @@ class Chef
         def source_files_exist?
           resolved_source_array.all? { |s| s && ::File.exist?(s) }
         end
-
 
         def zip(names, versions)
           names.zip(versions).map do |n, v|
